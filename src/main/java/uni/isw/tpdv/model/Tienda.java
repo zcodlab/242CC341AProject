@@ -1,6 +1,7 @@
 package uni.isw.tpdv.model;
 
 import java.util.List;
+import uni.isw.grasp.tpdv.controlador.TPDV;
 
 public class Tienda {
     private String direccion;
