@@ -3,6 +3,12 @@ package uni.isw.designpatterns.facade.gestionusuarios;
 public class GestorDeUsuariosIU {
     public static void main(String[] args){
         GestorDeUsuariosFacade gestor=new GestorDeUsuariosFacade();
-        gestor.listarUsuarios();        
+        gestor.listarUsuarios();
+        System.out.println("Agregando Usuario");
+        gestor.agregarUsuario(new Usuario("azapata","123456"));
+        gestor.listarUsuarios();
+        System.out.println("Eliminado Usuario");
+        gestor.eliminarUsuario(4);
+        gestor.listarUsuarios();
     }
 }

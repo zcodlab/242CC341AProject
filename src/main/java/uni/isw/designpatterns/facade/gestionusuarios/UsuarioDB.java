@@ -16,7 +16,17 @@ public class UsuarioDB implements IUsuario{
 
     @Override
     public void agregarUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try(Connection conn=conectar()){
+            String sql="insert into usuarios(username,password) values(?,?)";
+            try(PreparedStatement stmt=conn.prepareStatement(sql)){
+                stmt.setString(1, usuario.getUsername());
+                stmt.setString(2, usuario.getPassword());                
+                stmt.executeUpdate();
+                stmt.close();
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -26,7 +36,16 @@ public class UsuarioDB implements IUsuario{
 
     @Override
     public void eliminarUsuario(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try(Connection conn=conectar()){
+            String sql="delete from usuarios where id=?";
+            try(PreparedStatement stmt=conn.prepareStatement(sql)){
+                stmt.setInt(1, id);                
+                stmt.executeUpdate();
+                stmt.close();
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 
     @Override

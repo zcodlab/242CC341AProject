@@ -9,7 +9,7 @@ public class GestorDeUsuariosFacade implements IUsuario{
 
     @Override
     public void agregarUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        usuarioDB.agregarUsuario(usuario);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class GestorDeUsuariosFacade implements IUsuario{
 
     @Override
     public void eliminarUsuario(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        usuarioDB.eliminarUsuario(id);
     }
 
     @Override
